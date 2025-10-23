@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build a Responsive Portfolio Website</title>
+</head>
+<style>
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 0;
+       
+    }
+   
+    .brand{
+        font-weight: 900;
+
+    }
+    .nav-links{
+        list-style: none;
+        gap: 12px;
+        display: flex;
+    }
+    .nav-links a{
+        text-decoration: none;
+        padding: 6px 8px;
+        color: #333;
+        border-radius: 6px;
+    }
+    .nav-links a:hover{
+        background: #e6eefb;
+    }
+ 
+/* About Section */
+#about {
+    background-color: #fefefe;
+    padding: 80px 40px;
+    text-align: center;
+}
+
+/* Heading Style */
+#about h2 {
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Paragraph Style */
+#about p {
+    font-size: 18px;
+    color: #555;
+    max-width: 800px;
+    margin: 10px auto 30px;
+    line-height: 1.7;
+}
+
+/* Profile Image */
+#about img {
+    border-radius: 20px;
+    margin: 20px 0;
+    border: 3px solid #00bcd4;
+}
+
+/* Sub-headings (Education, Skills, Interests) */
+#about h3 {
+    font-size: 24px;
+    color: #111;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+/* Lists */
+#about ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#about ul li {
+    font-size: 17px;
+    margin: 6px 0;
+    color: #444;
+}
+
+ .dark-mode {
+    background-color: #121212;
+    color: white;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    #about {
+        padding: 50px 20px;
+    }
+
+    #about h2 {
+        font-size: 26px;
+    }
+
+    #about p {
+        font-size: 16px;
+    }
+
+    #about img {
+        width: 70%;
+        height: auto;
+    }
+
+    #about h3 {
+        font-size: 20px;
+    }
+
+    #about ul li {
+        font-size: 15px;
+    }
+}
+</style>
+
+</style>
+<body>
+    <header>
+        <nav>
+            <div class="brand"> Hira Jamali</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Project.html">Projects</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+            <button id="theme-toggle">🌙 Toggle Dark</button>
+        </nav>
+    </header>
+    <section id="about">
+        <h2>About Me...</h2>
+        <p>I'm <strong>Hira Jamali</strong>, an undergraduate Computer Science student (BSCS) who loves exploring technology, problem-solving, and creative design. My goal is to become a skilled software engineer and work on modern, impactful projects.</p>
+        <img src="girl.jpg" alt="girl" width="28%" height="400px">
+        <h3>Education</h3>
+        <ul>
+            <li>BS Computer Science - Ongoing</li>
+            <li>Completed Intermediate in Pre-Engineering</li>
+        </ul>
+        <h3>Skills</h3>
+        <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>C++ (Data Structures & Algorithms)</li>
+        <li>Responsive Web Design</li>
+        </ul>
+        <h3>Interests</h3>
+       <p> I enjoy learning new technologies, designing creative websites, and solving coding challenges. In my free time, I like watching tech tutorials and improving my programming skills.</p>
+    </section>
+    <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+  
+    });
+</script>
+</body>
+</html>
