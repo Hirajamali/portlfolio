@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build a Responsive Portfolio Website</title>
+</head>
+<style>
+nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 0;
+       
+    }
+   
+    .brand{
+        font-weight: 900;
+
+    }
+    .nav-links{
+        list-style: none;
+        gap: 12px;
+        display: flex;
+    }
+    .nav-links a{
+        text-decoration: none;
+        padding: 6px 8px;
+        color: #333;
+        border-radius: 6px;
+    }
+    .nav-links a:hover{
+        background: #e6eefb;
+    } 
+
+/* Projects Section */
+#projects {
+    background-color: #f9f9f9;
+    padding: 80px 40px;
+    text-align: center;
+}
+
+/* Section Heading */
+#projects h2 {
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+/* Short intro paragraph */
+#projects p {
+    font-size: 17px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Project Cards Container */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Individual Card */
+.project-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+   margin-top: 40px;
+}
+
+/* Card Image */
+.project-card img {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+}
+
+/* Card Content */
+.project-card h3 {
+    font-size: 20px;
+    color: #111;
+    margin: 15px 0 10px;
+}
+
+.project-card p {
+    font-size: 16px;
+    color: #555;
+    padding: 0 15px 15px;
+}
+
+/* View Link Button */
+.project-card a {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 15px;
+    background-color: #00bcd4;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.project-card a:hover {
+    background-color: #008c9e;
+}
+
+/* Hover Effect */
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+ .dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+@media (max-width: 1024px) {
+  nav {
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .project-card img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  #projects {
+    padding: 60px 20px;
+  }
+
+  .project-card img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  #projects h2 {
+    font-size: 26px;
+  }
+
+  #projects p {
+    font-size: 15px;
+  }
+
+  .project-card h3 {
+    font-size: 18px;
+  }
+
+  .project-card p {
+    font-size: 14px;
+  }
+
+  #themebtn {
+    margin-top: 10px;
+  }
+}
+
+    </style>
+<body>
+     <header>
+        <nav>
+            <div class="brand"> Hira Jamali</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Project.html">Projects</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+             <button id="theme-toggle">🌙 Toggle Dark</button>
+        </nav>
+    </header>
+    <section id="projects">
+        <h2>My Projects</h2>
+        <p>Here are a few of my recent works that show my learning and creativity.</p>
+         <!-- Project 1 -->
+        <div class="project-container">
+            <div class="project-card">
+            <img src="responsive gallery.png" alt="gallery">
+            <h3>Responsive Image Gallery</h3>
+            <p>A simple and elegant responsive image gallery built using HTML, CSS, and JavaScript with lightbox popup feature.</p>
+            <a href="#" target="_blank">View Project</a>
+            </div>
+          <!-- Project 2 -->
+           <div class="project-card">
+            <img src="project4.png" alt="project">
+            <h3>Core Tech Website</h3>
+            <p>A modern and informative technology website that provides articles, tutorials, and updates on the latest innovations in software and web development.</p>
+             <a href="#" target="_blank">View Project</a>
+    </div>
+           <!-- Project 3 -->
+            <div class="project-card">
+                <img src="project2.png" alt="project">
+               <h3>Portfolio Website</h3>
+            <p>A personal portfolio website to showcase skills and projects — fully responsive and smooth UI.</p>
+            <a href="#" target="_blank">View Project</a>
+            </div>
+           </div>
+        
+    </section>
+    <script>
+    const toggleButton = document.getElementById('theme-toggle');
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+  
+    });
+</script>
+</body>
+</html>
