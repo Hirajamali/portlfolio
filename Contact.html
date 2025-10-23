@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build a Responsive Portfolio Website</title>
+</head>
+<style>
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 10px 0;
+       
+    }
+   
+    .brand{
+        font-weight: 900;
+
+    }
+    .nav-links{
+        list-style: none;
+        gap: 12px;
+        display: flex;
+    }
+    .nav-links a{
+        text-decoration: none;
+        padding: 6px 8px;
+        color: #333;
+        border-radius: 6px;
+    }
+    .nav-links a:hover{
+        background: #e6eefb;
+    } 
+/* Contact Section */
+#contactform{
+    border: 1px solid;
+    align-items: center;
+    width: 36%;
+    padding-top: 20px;
+    height: 360px;
+   text-align: center;
+   margin-top: 20px;
+   margin-left: 410px;
+   border-radius: 5px;
+    transition: background-color 0.3s ease;
+   transform: translateY(-8px);
+    box-shadow: 0 6px 16px rgba(0.1,0.2,0.3,0.4);
+  
+}
+
+
+#contact{
+    text-align: center;
+}
+ .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: 600;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+       
+        .dark-mode {
+    background-color: #121212;
+    color: white;
+}
+        /* ===== Responsive Design ===== */
+
+        /* Tablets */
+        @media (max-width: 900px) {
+            #contactform {
+                width: 60%;
+                margin-left: 40px;
+                margin-right: 10px;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+     
+
+        /* Mobiles */
+        @media (max-width: 600px) {
+            .brand {
+                font-size: 20px;
+            }
+
+            #contactform {
+                width: 50%;
+                padding: 20px;
+                margin-left: 20px;
+                margin-right: 9px;
+            }
+
+            #contact h2 {
+                font-size: 22px;
+            }
+
+            #contact p {
+                font-size: 14px;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    
+
+</style>
+
+<body>
+     <header>
+        <nav>
+            <div class="brand"> Hira Jamali</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="Project.html">Projects</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+             <button id="theme-toggle">🌙 Toggle Dark</button>
+        </nav>
+    </header>
+
+    <section id="contact">
+    <h2>Contact Me...</h2>
+    <p>Feel free to get in touch with me for collaboration, questions, or project discussions!</p>
+   
+     <!-- Contact Form -->
+      <form id="contactform">
+        <label for="">Name:</label>
+       <input type="text" id="name" placeholder="Your Name" required>
+       <br>
+       <br>
+       <label for="">Email:</label>
+       <input type="email" id="email" placeholder="Your Email" required>
+       <br>
+       <br>
+       <label for="">Massage:</label>
+       <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+       <br>
+       <br>
+ <button id="submit">Submit</button> 
+      </form>
+      <br>
+      <br>
+       <!-- Social Media Links -->
+        <div class="social-links">
+             <a href="https://www.linkedin.com/in/hira-jamali-529598387/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/Hirajamali" target="_blank">GitHub</a>
+            <a href="hirajamali87@gmail.com">Email</a>
+        </div>
+</section> 
+<script>
+document.getElementById("contactform").addEventListener("submit", function(e){
+    e.preventDefault(); // stop default form action
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    if(name === "" || email === "" || message === ""){
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    // simple email format check
+    if(!email.includes("@") || !email.includes(".")){
+        alert("Please enter a valid email address.");
+        return;
+}
+    alert("Thank you! Your message has been submitted successfully 😊");
+    });
+    document.getElementById("contactform").reset();
+    
+    const toggleButton = document.getElementById('theme-toggle');
+    toggleButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+  });
+    
+
+</script>
+
+</body>
+</html>
